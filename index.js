@@ -108,13 +108,8 @@ mf.comp.FacebookSignin = class extends Signin {
         try {
             let ret = super.width(prm);
             if ( (undefined !== prm) && ('number' === typeof prm) ) {
-                let chd = this.child();
-                for (let cidx in chd) {
-                    if (true === mf.func.isInclude(chd[cidx], 'FontAwesome')) {
-                        chd[cidx].size((prm/4)-8);
-                    } else if (true === mf.func.isInclude(chd[cidx], 'Text')) {
-                        chd[cidx].size(prm/10);
-                    }
+                if (true === mf.func.isInclude(this.child()[0], 'FontAwesome')) {
+                    this.child()[0].size((prm/4)-8);
                 }
             }
             return ret;
