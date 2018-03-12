@@ -3,19 +3,15 @@
  * @author simpart
  */
 let mf = require('mofron');
+let Signin = require('mofron-comp-socialsignin');
 let Text   = require('mofron-comp-text');
-let Button = require('mofron-comp-button');
-let Frame  = require('mofron-comp-frame');
 let Icon   = require('mofron-comp-fontawesome');
-let Margin = require('mofron-layout-margin');
-let tHoriz = require('mofron-effect-txthoriz');
-let Click  = require('mofron-event-click');
 
 /**
  * @class mofron.comp.facebooksignin
  * @brief facebook signin button component for mofron
  */
-mf.comp.FacebookSignin = class extends Frame {
+mf.comp.FacebookSignin = class extends Signin {
     
     constructor (po) {
         try {
@@ -36,23 +32,6 @@ mf.comp.FacebookSignin = class extends Frame {
     initDomConts (prm) {
         try {
             super.initDomConts();
-            this.addLayout(new Margin('left', 5));
-            this.addEffect(new tHoriz());
-            this.addEvent(
-                new Click(
-                    (fb) => {
-                        try {
-                            let fnc = fb.authFunc();
-                            if (null !== fnc) {
-                                fnc[0](fnc);
-                            }
-                        } catch (e) {
-                            console.error(e.stack);
-                            throw e;
-                        }
-                    }
-                )
-            );
             this.color(
                 new mf.Color(59, 89, 152),
                 new mf.Color(59, 89, 152)
@@ -60,21 +39,10 @@ mf.comp.FacebookSignin = class extends Frame {
             this.radius(3);
             this.text((undefined === prm) ? 'Continue with Facebook' : prm);
             
-            this.size(200, 50);
-            
         } catch (e) {
             console.error(e.stack);
             throw e;
         }
-    }
-    
-    authFunc (fnc, prm) {
-        if (undefined === fnc) {
-            /* getter */
-            return (undefined === this.m_authfnc)? null : this.m_authfnc;
-        }
-        /* setter */
-        this.m_authfnc = [fnc, prm];
     }
     
     setIconPath (prm) {

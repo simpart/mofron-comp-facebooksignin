@@ -1,6 +1,6 @@
 {
   "name": "mofron-comp-facebooksignin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "facebook signin button for mofron",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,7 @@
     "url": "git+https://github.com/simpart/mofron-comp-facebooksignin.git"
   },
   "dependencies": {
-    "mofron-comp-fontawesome": "",
-    "mofron-layout-margin" : "",
-    "mofron-effect-txthoriz" : "",
-    "mofron-event-click": ""
+    "mofron-comp-fontawesome": ""
   },
   "keywords": [
     "front-end"
