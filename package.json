@@ -1,6 +1,6 @@
 {
   "name": "mofron-comp-facebooksignin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "facebook signin button for mofron",
   "main": "index.js",
   "scripts": {

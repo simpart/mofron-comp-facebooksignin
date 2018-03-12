@@ -36,7 +36,6 @@ mf.comp.FacebookSignin = class extends Signin {
                 new mf.Color(59, 89, 152),
                 new mf.Color(59, 89, 152)
             );
-            this.radius(3);
             this.text((undefined === prm) ? 'Continue with Facebook' : prm);
             
         } catch (e) {
